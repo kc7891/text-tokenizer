@@ -10,6 +10,7 @@ const onCopy = (value) => {
 
 const onClear = () =>{
 	$result.innerHTML = ''
+  $text.value = ''
 }
 
 const onParse = () => {
