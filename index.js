@@ -8,8 +8,12 @@ const onCopy = (value) => {
   navigator.clipboard.writeText(value)
 }
 
+const onClearResult = () => {
+  $result.innerHTML = ''
+}
+
 const onClear = () =>{
-	$result.innerHTML = ''
+	onClearResult()
   $text.value = ''
 }
 
@@ -35,7 +39,7 @@ const onParse = () => {
     return $block
   })
   
-  onClear()
+  onClearResult()
   results.forEach((element) => {
 	  $result.appendChild(element)
   })
