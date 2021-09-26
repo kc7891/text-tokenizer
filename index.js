@@ -1,8 +1,14 @@
 const $text = document.querySelector('#text')
+const $paste = document.querySelector('#paste')
 const $count = document.querySelector('#count')
 const $parseButton = document.querySelector('#parse')
 const $result = document.querySelector('#result')
 const $clear = document.querySelector('#clear')
+
+const onPaste = () => {
+  navigator.clipboard.readText().then(
+    clipText => $text.value = clipText);
+}
 
 const onCopy = (value) => {
   navigator.clipboard.writeText(value)
@@ -46,5 +52,6 @@ const onParse = () => {
 
 }
 
+$paste.addEventListener('click',onPaste)
 $parseButton.addEventListener('click', onParse)
 $clear.addEventListener('click',onClear)
